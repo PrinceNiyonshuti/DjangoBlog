@@ -1,0 +1,13 @@
+{% extends "../blog/base.html" %}
+{% block content %}
+    {% if search %}
+        <h2>You Searched For {{ search }}</h2>
+        <br>
+        {% for post in posts %}
+            <a href="{% url 'post-detail' post.id %}" >{{ post }}</a><br>
+        {% endfor %}
+
+    {% else %}
+        <h2>Searched Posts</h2>
+    {% endif %}
+{% endblock content %}
